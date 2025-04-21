@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffb0f8;
+}
+
+.container {
+    text-align: center;
+    background-color: #e298ff;
+    padding: 40px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 100px;
+   
+    
+}
+
+#contador {
+    font-size: 2rem;
+    color: #a63ed6;
+    font-weight: bold;
+}
