@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
     
     midias.forEach(item => {
-        const mediaPath = `paginas/Fotos/${item.arquivo}`;
+        const mediaPath = `Fotos/${item.arquivo}`;
         const isVideo = item.arquivo.endsWith('.mp4') || item.isVideo;
         const altText = item.texto || 'Nossa foto';
 
