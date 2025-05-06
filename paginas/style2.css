@@ -1,149 +1,243 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Corpo da página */
 body {
-  background: #E6D0F7;
-  font-family: 'Quicksand', sans-serif;
-  padding: 2rem;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9cff5;
+    color: #4b0082;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
-#categorias {
-  display: flex;
-  background-color: #cc73f5;
-  padding: 40px;
-  border: #c45ff3 solid;
-  border-radius: 8px;
-  width: 85%;
-  justify-content: space-between;
-  margin: 0 5%;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-bottom: 25px;
+/* Estilo do menu de navegação */
+nav {
+    background-color: #f3e5f5; /* Fundo lilás claro */
+    border: 1px solid #d1c4e9; /* Borda suave */
+    width: auto; /* Ajusta a largura automaticamente */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
-a {
-  flex-grow: 1;
-  text-align: center;
-  font-size: 25px;
-  text-decoration: none;
-  color: #6a0dad;
-  min-width: 100px;
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-header {
-  background: linear-gradient(135deg, #C88BF0 0%, #E8C9FF 100%);
-  color: white;
-  text-align: center;
-  padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(112, 45, 145, 0.35);
-  margin-bottom: 2rem;
-  width: 100%;
-  max-width: 1400px;
+nav li {
+    position: relative; /* Necessário para dropdown */
+    padding: 10px 15px; /* Aumentado para melhorar a área clicável */
+    color: #6a0dad; /* Cor do texto em roxo */
+    text-decoration: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-header h1 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  text-shadow: 1px 1px 4px rgba(112, 45, 145, 0.4);
+nav li:hover {
+    background-color: #e1bee7; /* Efeito hover em lilás claro */
+    color: #4a148c; /* Cor do texto ao passar o mouse */
 }
 
-.gallery-container {
-  width: 100%;
-  max-width: 1400px;
-  column-count: 1;
-  column-gap: 2rem;
+.dropdown-menu {
+    position: absolute;
+    top: 100%; /* Alinha a lista suspensa com o menu */
+    left: 0;
+    background-color: #ffffff; /* Fundo branco para a lista suspensa */
+    border: 1px solid #d1c4e9; /* Borda suave */
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    display: none; /* Oculta por padrão */
+    z-index: 1001; /* Garante que fique acima de outros elementos */
 }
 
-.gallery-item {
-  background: #FFFFFF;
-  margin-bottom: 3rem;
-  display: inline-block;
-  break-inside: avoid;
-  border-radius: 10px 10px 16px 16px;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid #d1b1e4;
-  text-align: center;
-  transform: rotate(-1.5deg);
-  box-shadow: 0 20px 50px rgba(160, 87, 209, 0.4);
+.dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: #6a0dad; /* Cor dos itens em roxo */
+    text-decoration: none;
+    transition: background-color 0.3s;
 }
 
-.gallery-item:hover {
-  transform: scale(1.03) rotate(0deg);
-  box-shadow: 0 24px 60px rgba(160, 87, 209, 0.45);
+.dropdown-menu a:hover {
+    background-color: #e1bee7; /* Efeito hover em lilás claro */
 }
 
-.media-container {
-  padding: 1rem 1rem 2rem;
-  background: #FFF;
-  border-bottom: 8px solid #E8C9FF;
+.dropdown:hover .dropdown-menu {
+    display: block;
 }
 
-.media-container img,
-.media-container video {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px;
+/* Container do conteúdo */
+.container {
+    text-align: center;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
-footer {
-  margin-top: 3rem;
-  color: #702D91;
-  font-style: italic;
-  text-align: center;
-  padding: 1rem;
+/* Título */
+h1 {
+    margin-top: 80px; /* Aumentado para evitar sobreposição */
+    margin-bottom: 20px; /* Espaço inferior */
+    color: #6a0dad;
+    font-size: 2.5rem;
+    text-align: center; /* Centraliza o título */
+    width: 90%; /* Largura para evitar que bata nas bordas */
 }
 
-@media (min-width: 600px) {
-  .gallery-container {
-    column-count: 2;
-  }
+/* Blocos de tempo */
+.blocos {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    padding: 20px;
 }
 
-@media (min-width: 900px) {
-  .gallery-container {
-    column-count: 3;
-  }
-
-  .gallery-item {
-    transform: rotate(-2deg);
-  }
-
-  .gallery-item:hover {
-    transform: scale(1.15) rotate(0deg);
-  }
+/* Estilo dos blocos */
+.bloco {
+    background-color: #e6d5f7;
+    border-radius: 12px;
+    padding: 20px;
+    width: 100px;
+    box-shadow: 0 4px 8px rgba(75, 0, 130, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-@media (min-width: 1200px) {
-  .gallery-container {
-    column-count: 4;
-    column-gap: 2.5rem;
-  }
-
-  body {
-    padding: 3rem;
-  }
+.bloco:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(75, 0, 130, 0.4);
 }
 
-.gallery-item p {
-  padding: 0.75rem 1rem 1.2rem;
-  font-size: 1rem;
-  color: #5C3A72;
-  background-color: #FFFFFF;
-  border-top: 1px solid #E8C9FF;
-  border-radius: 0 0 16px 16px;
-  box-shadow: inset 0 2px 4px rgba(160, 87, 209, 0.05);
-  font-weight: 500;
-  line-height: 1.4;
+.valor {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #4b0082;
+}
+
+.legenda {
+    margin-top: 5px;
+    font-size: 1.1em;
+    color: #6a0dad;
+}
+
+.descricao {
+    margin-top: 20px;
+    color: #4b0082;
+    font-size: 1.1em;
+}
+
+/* Corações flutuando */
+#coracoes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    color: #ff69b4;
+    font-size: 24px;
+    animation: cair 5s linear infinite;
+    user-select: none;
+    opacity: 0.8;
+}
+
+@keyframes cair {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        padding: 8px;
+    }
+
+    a {
+        font-size: 22px;
+        width: 100%;
+    }
+
+    .bloco {
+        width: 80px;
+        padding: 15px;
+    }
+
+    .valor {
+        font-size: 2em;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-top: 100px; /* Para telas menores */
+        width: 95%; /* Aumentar largura para se ajustar melhor */
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 16px;
+    }
+
+    a {
+        font-size: 20px;
+    }
+
+    .bloco {
+        width: 70px;
+        padding: 10px;
+    }
+
+    .valor {
+        font-size: 1.8em;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        margin-top: 120px; /* Aumentar margem para celulares */
+        width: 95%; /* Largura para evitar que bata nas bordas */
+    }
+
+    .blocos {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
 }
