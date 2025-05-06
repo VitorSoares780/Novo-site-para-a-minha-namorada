@@ -182,6 +182,8 @@ document.addEventListener('DOMContentLoaded', () => {
         {arquivo: "VID_20250310_125926810.mp4", texto: "", isVideo: true},
         {arquivo: "VID_20250411_193444757.mp4", texto: "", isVideo: true},
         {arquivo: "VID_20250330_154606284.mp4", texto: "", isVideo: true},
+        {arquivo: "output.mp4", texto: "", isVideo: true},
+        {arquivo: "output2.mp4", texto: "", isVideo: true}
     ];
     
     midias.forEach(item => {
