@@ -178,11 +178,14 @@ document.addEventListener('DOMContentLoaded', () => {
         {arquivo: "VID-20241225-WA0035.mp4", texto: "", isVideo: true},
         {arquivo: "VID-20241225-WA0070.mp4", texto: "", isVideo: true},
         {arquivo: "VID-20250103-WA0021.mp4", texto: "", isVideo: true},
-        {arquivo: "VID_20250126_195828_484.mp4", texto: "", isVideo: true}
+        {arquivo: "VID_20250126_195828_484.mp4", texto: "", isVideo: true},
+        {arquivo: "VID_20250310_125926810.mp4", texto: "", isVideo: true},
+        {arquivo: "VID_20250411_193444757.mp4", texto: "", isVideo: true},
+        {arquivo: "VID_20250330_154606284.mp4", texto: "", isVideo: true},
     ];
     
     midias.forEach(item => {
-        const mediaPath = `Fotos/${item.arquivo}`;
+        const mediaPath = `paginas/Fotos/${item.arquivo}`;
         const isVideo = item.arquivo.endsWith('.mp4') || item.isVideo;
         const altText = item.texto || 'Nossa foto';
 
