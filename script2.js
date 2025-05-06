@@ -171,7 +171,6 @@ document.addEventListener('DOMContentLoaded', () => {
         {arquivo: "Screenshot_20250124-034518.jpg", texto: ""},
         {arquivo: "Screenshot_20250124-041846.jpg", texto: ""},
       
-        {arquivo: "VID_20241127_112530187.mp4", texto: "", isVideo: true},
         {arquivo: "VID-20241212-WA0058.mp4", texto: "", isVideo: true},
         {arquivo: "VID-20241213-WA0000.mp4", texto: "", isVideo: true},
         {arquivo: "VID-20241225-WA0010.mp4", texto: "", isVideo: true},
@@ -179,12 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {arquivo: "VID-20241225-WA0035.mp4", texto: "", isVideo: true},
         {arquivo: "VID-20241225-WA0070.mp4", texto: "", isVideo: true},
         {arquivo: "VID-20250103-WA0021.mp4", texto: "", isVideo: true},
-        {arquivo: "VID-20250118-WA0009.mp4", texto: "", isVideo: true},
-        {arquivo: "VID_20250126_195828_484.mp4", texto: "", isVideo: true},
-        {arquivo: "VID_20250310_125926810.mp4", texto: "", isVideo: true},
-        {arquivo: "VID_20250330_154606284.mp4", texto: "", isVideo: true},
-        {arquivo: "VID_20250330_191251124.mp4", texto: "", isVideo: true},
-        {arquivo: "VID_20250411_193444757.mp4", texto: "", isVideo: true}
+        {arquivo: "VID_20250126_195828_484.mp4", texto: "", isVideo: true}
     ];
     
     midias.forEach(item => {
