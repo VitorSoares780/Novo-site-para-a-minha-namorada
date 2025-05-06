@@ -39,17 +39,18 @@ a {
   color: #6a0dad;
   min-width: 100px;
 }
-
 header {
   background: linear-gradient(135deg, #C88BF0 0%, #E8C9FF 100%);
   color: white;
-  text-align: center;
-  padding: 2rem;
+  display: flex; /* Ativa o Flexbox */
+  align-items: center; /* Alinha verticalmente ao centro */
+  justify-content: center; /* Centraliza horizontalmente */
+  padding: 1rem; /* Reduzir o padding vertical */
   border-radius: 20px;
   box-shadow: 0 4px 15px rgba(112, 45, 145, 0.35);
-  margin-bottom: 2rem;
-  width: 100%;
-  max-width: 1400px;
+  margin-bottom: 1.5rem; /* Reduzir a margem inferior */
+  width: 90%; /* Ajuste a largura para 90% */
+  max-width: 700px; /* Defina um máximo para centralizar */
 }
 
 header h1 {
@@ -103,6 +104,114 @@ footer {
   font-style: italic;
   text-align: center;
   padding: 1rem;
+}
+
+/* Estilo do menu de navegação */
+nav {
+  background-color: #f3e5f5; /* Fundo lilás claro */
+  border: 1px solid #d1c4e9; /* Borda suave */
+  width: auto; /* Ajusta a largura automaticamente */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  position: relative; /* Necessário para dropdown */
+  padding: 10px 15px; /* Aumentado para melhorar a área clicável */
+  color: #6a0dad; /* Cor do texto em roxo */
+  text-decoration: none;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav li:hover {
+  background-color: #e1bee7; /* Efeito hover em lilás claro */
+  color: #4a148c; /* Cor do texto ao passar o mouse */
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Alinha a lista suspensa com o menu */
+  left: 0;
+  background-color: #ffffff; /* Fundo branco para a lista suspensa */
+  border: 1px solid #d1c4e9; /* Borda suave */
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  display: none; /* Oculta por padrão */
+  z-index: 1001; /* Garante que fique acima de outros elementos */
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 15px;
+  color: #6a0dad; /* Cor dos itens em roxo */
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.dropdown-menu a:hover {
+  background-color: #e1bee7; /* Efeito hover em lilás claro */
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block; /* Exibe o menu ao passar o mouse */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column; /* Alinha verticalmente os itens do menu */
+    align-items: center; /* Centraliza os itens */
+    gap: 10px; /* Espaçamento entre os itens */
+  }
+
+  nav li {
+    padding: 8px; /* Ajusta o padding para melhorar a área clicável */
+  }
+
+  header h1 {
+    margin-top: 100px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  nav ul {
+    flex-direction: column; /* Mantém a coluna em telas menores */
+    gap: 5px; /* Ajusta o espaçamento */
+  }
+
+  nav a {
+    font-size: 16px; /* Ajusta o tamanho da fonte */
+  }
+
+  header h1 {
+    font-size: 1.8rem; /* Ajusta o tamanho do título */
+    margin-top: 120px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* Estilos adicionais para a galeria e outros elementos */
+.gallery-container {
+  /* ... (mantenha os estilos existentes) ... */
 }
 
 @media (min-width: 600px) {
