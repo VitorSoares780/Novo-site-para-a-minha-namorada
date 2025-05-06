@@ -25,7 +25,7 @@ function validarFormulario(){
         }else{
         document.querySelector('#loginForm').remove(); 
     alert("Você está sendo redirecionada!!")
-        window.location.href = "Paginainicial.html"
+        window.location.href = "paginainicial.html"
         }
        
     }else{
