@@ -16,7 +16,7 @@ function validarFormulario(){
     ];
     const usuariosnegados=[
         "agathafeia", "agathafeiosa", "agathamocreia", "agathamocréia", "agathapeidorreira", "agathahorrível",
-        "agathachata","agathaputa","agathaquenga","agathacuzona","agathatrouxa","agathaidiota"
+        "agathachata","agathaputa","agathaquenga","agathacuzona","agathatrouxa","agathaidiota", "agathaégua", "agathaegua"
 
     ];
     if ((usuariovalor.startsWith("agatha")||usuariosEspecificos.includes(usuariovalor))&&(senhavalor === "27/11"||senhavalor==="02/06"||senhavalor==="28/01")){
@@ -25,7 +25,7 @@ function validarFormulario(){
         }else{
         document.querySelector('#loginForm').remove(); 
     alert("Você está sendo redirecionada!!")
-        window.location.href = 'paginainicial.html'
+        window.location.href = "paginas/Paginainicial.html"
         }
        
     }else{
