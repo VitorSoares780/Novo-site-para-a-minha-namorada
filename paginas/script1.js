@@ -69,7 +69,9 @@ function criarCoracao() {
       coracao.remove();
     }, 5000);
   }
-  
-  // Criar corações a cada 300ms
   setInterval(criarCoracao, 300);
+  document.querySelector('.dropdown').addEventListener('click', function() {
+    const menu = this.querySelector('.dropdown-menu');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+});
    

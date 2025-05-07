@@ -64,11 +64,6 @@ nav li:hover {
 .dropdown-menu a:hover {
   background-color: #e1bee7; /* Efeito hover em lilás claro */
 }
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
 body {
   height: 100vh;
   margin: 0;
