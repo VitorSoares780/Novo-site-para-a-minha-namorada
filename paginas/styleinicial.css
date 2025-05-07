@@ -3,7 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+p{
+  text-align: center;
+  font-size: 25px;
+  text-decoration: none;
+  color: #6a0dad;
+}
 nav {
   background-color: #f3e5f5; /* Fundo lilás claro */
   border: 1px solid #d1c4e9; /* Borda suave */
