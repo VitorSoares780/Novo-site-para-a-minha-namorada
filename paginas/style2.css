@@ -4,6 +4,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}p{
+  text-align: center;
+  font-size: 25px;
+  text-decoration: none;
+  color: #6a0dad;
 }
 
 body {
@@ -168,10 +173,6 @@ nav li:hover {
   background-color: #e1bee7; /* Efeito hover em lilás claro */
 }
 
-.dropdown:hover .dropdown-menu {
-  display: block; /* Exibe o menu ao passar o mouse */
-}
-
 /* Responsividade */
 @media (max-width: 768px) {
   nav ul {
@@ -209,10 +210,6 @@ nav li:hover {
   }
 }
 
-/* Estilos adicionais para a galeria e outros elementos */
-.gallery-container {
-  /* ... (mantenha os estilos existentes) ... */
-}
 
 @media (min-width: 600px) {
   .gallery-container {
