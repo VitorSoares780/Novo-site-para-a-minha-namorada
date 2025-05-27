@@ -1,4 +1,4 @@
-const dataInicio = new Date("2024-11-26T11:30:00");
+const dataInicio = new Date("2024-11-28T11:30:00");
 
 function isAnoBissexto(ano) {
     return (ano % 4 === 0 && ano % 100 !== 0) || (ano % 400 === 0);
