@@ -4,14 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const midias = [
         {arquivo: "IMG-20241003-WA0008.jpg", texto: "Uma de nossas primeiras fotos!"},
-        {arquivo: "IMG_20241025_115140941_HDR_AE.jpg", texto: ""},
-        {arquivo: "IMG_20241025_115144930_HDR_AE.jpg", texto: ""},
-        {arquivo: "IMG_20241102_210601770_AE.jpg", texto: ""},
-        {arquivo: "IMG_20241102_210604152_AE.jpg", texto: ""},
-        {arquivo: "IMG_20241102_214045625_AE.jpg", texto: ""},
+        {arquivo: "IMG_20241025_115140941_HDR_AE.jpg", texto: "Que foto linda ❤️"},
+        {arquivo: "IMG_20241102_210604152_AE.jpg", texto: "Até de boca cheia é linda"},
         {arquivo: "IMG_20241102_214047666_AE.jpg", texto: ""},
-        {arquivo: "IMG_20241102_214059985_AE.jpg", texto: ""},
-        {arquivo: "IMG_20241102_214151383_AE.jpg", texto: ""},
         {arquivo: "IMG_20241102_214152605_AE.jpg", texto: ""},
         {arquivo: "IMG-20241102-WA0031.jpeg", texto: ""},
         {arquivo: "IMG-20241102-WA0040.jpg", texto: ""},
