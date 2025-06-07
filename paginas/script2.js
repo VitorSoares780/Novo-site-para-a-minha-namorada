@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {arquivo: "IMG_20241208_185146982.jpg", texto: "Junto com meu bebê!!"},
         {arquivo: "IMG_20241208_185153437.jpg", texto: ""},
         {arquivo: "IMG_20241211_122017802_HDR.jpg", texto: ""},
-        {arquivo: "IMG_20241212_204247_925.webp", texto: ""},
+        {arquivo: "IMG_20241212_204247_925.webp", texto: "Bingo!!"},
         {arquivo: "IMG_20241216_200312768.jpg", texto: ""},
         {arquivo: "IMG_20241216_211754472.jpg", texto: ""},
         {arquivo: "IMG_20241216_211759751.jpg", texto: ""},
