@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {arquivo: "IMG-20241121-WA0010.jpeg", texto: "Foto meiga"},
         {arquivo: "IMG_20241128_120005489_HDR.jpg", texto: "UMA DAS PRIMEIRAS FOTOS NAMORANDO"},
         {arquivo: "IMG_20241129_080007919_HDR.jpg", texto: "A CARINHA AKKAKAKAKAK"},
-        {arquivo: "IMG_20241208_185146982.jpg", texto: ""},
+        {arquivo: "IMG_20241208_185146982.jpg", texto: "Junto com meu bebê!!"},
         {arquivo: "IMG_20241208_185153437.jpg", texto: ""},
         {arquivo: "IMG_20241211_122017802_HDR.jpg", texto: ""},
         {arquivo: "IMG_20241212_204247_925.webp", texto: ""},
