@@ -11,19 +11,21 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-}p{
+}
+
+p {
     text-align: center;
     font-size: 25px;
     text-decoration: none;
     color: #6a0dad;
-  }
+}
 
 a {
     flex-grow: 1;
     text-align: center;
     font-size: 25px;
     text-decoration: none;
-    color: #6a0dad; /* Corrigido para incluir o hash */
+    color: #6a0dad;
     min-width: 100px;
 }
 
@@ -33,16 +35,18 @@ a {
     padding: 20px;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    max-width: 1200px;
 }
 
 /* Título */
 h1 {
-    margin-top: 80px; /* Aumentado para evitar sobreposição */
-    margin-bottom: 20px; /* Espaço inferior */
+    margin-top: 80px;
+    margin-bottom: 20px;
     color: #6a0dad;
     font-size: 2.5rem;
-    text-align: center; /* Centraliza o título */
-    width: 90%; /* Largura para evitar que bata nas bordas */
+    text-align: center;
+    width: 90%;
 }
 
 /* Blocos de tempo */
@@ -64,6 +68,7 @@ h1 {
     box-shadow: 0 4px 8px rgba(75, 0, 130, 0.2);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0;
 }
 
 .bloco:hover {
@@ -87,6 +92,8 @@ h1 {
     margin-top: 20px;
     color: #4b0082;
     font-size: 1.1em;
+    text-align: center;
+    padding: 0 20px;
 }
 
 /* Corações flutuando */
@@ -148,8 +155,12 @@ h1 {
 
     h1 {
         font-size: 2rem;
-        margin-top: 100px; /* Para telas menores */
-        width: 95%; /* Aumentar largura para se ajustar melhor */
+        margin-top: 100px;
+        width: 95%;
+    }
+    
+    .blocos {
+        gap: 10px;
     }
 }
 
@@ -178,22 +189,29 @@ h1 {
 
     h1 {
         font-size: 1.8rem;
-        margin-top: 120px; /* Aumentar margem para celulares */
-        width: 95%; /* Largura para evitar que bata nas bordas */
+        margin-top: 120px;
+        width: 95%;
     }
 
     .blocos {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: row;
+        gap: 8px;
         align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .descricao {
+        font-size: 0.9em;
+        padding: 0 10px;
     }
 }
 
 /* Estilo do menu de navegação */
 nav {
-    background-color: #f3e5f5; /* Fundo lilás claro */
-    border: 1px solid #d1c4e9; /* Borda suave */
-    width: auto; /* Ajusta a largura automaticamente */
+    background-color: #f3e5f5;
+    border: 1px solid #d1c4e9;
+    width: auto;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -202,6 +220,8 @@ nav {
     top: 0;
     left: 0;
     z-index: 1000;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 nav ul {
@@ -213,9 +233,9 @@ nav ul {
 }
 
 nav li {
-    position: relative; /* Necessário para dropdown */
-    padding: 10px 15px; /* Aumentado para melhorar a área clicável */
-    color: #6a0dad; /* Cor do texto em roxo */
+    position: relative;
+    padding: 10px 15px;
+    color: #6a0dad;
     text-decoration: none;
     font-size: 18px;
     cursor: pointer;
@@ -223,30 +243,53 @@ nav li {
 }
 
 nav li:hover {
-    background-color: #e1bee7; /* Efeito hover em lilás claro */
-    color: #4a148c; /* Cor do texto ao passar o mouse */
+    background-color: #e1bee7;
+    color: #4a148c;
 }
 
 .dropdown-menu {
     position: absolute;
-    top: 100%; /* Alinha a lista suspensa com o menu */
+    top: 100%;
     left: 0;
-    background-color: #ffffff; /* Fundo branco para a lista suspensa */
-    border: 1px solid #d1c4e9; /* Borda suave */
+    background-color: #ffffff;
+    border: 1px solid #d1c4e9;
     border-radius: 4px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    display: none; /* Oculta por padrão */
-    z-index: 1001; /* Garante que fique acima de outros elementos */
+    display: none;
+    z-index: 1001;
+    min-width: 150px;
 }
 
 .dropdown-menu a {
     display: block;
     padding: 10px 15px;
-    color: #6a0dad; /* Cor dos itens em roxo */
+    color: #6a0dad;
     text-decoration: none;
     transition: background-color 0.3s;
+    font-size: 16px;
+    text-align: left;
 }
 
 .dropdown-menu a:hover {
-    background-color: #e1bee7; /* Efeito hover em lilás claro */
+    background-color: #e1bee7;
+}
+
+/* Para telas muito pequenas */
+@media (max-width: 360px) {
+    .bloco {
+        width: 60px;
+        padding: 8px;
+    }
+    
+    .valor {
+        font-size: 1.6em;
+    }
+    
+    .legenda {
+        font-size: 1em;
+    }
+    
+    .blocos {
+        gap: 5px;
+    }
 }
