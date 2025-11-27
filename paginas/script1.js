@@ -12,42 +12,60 @@ function calcularDiasNoMes(ano, mes) {
 function calcularTempo() {
     const agora = new Date();
     
+    // Calcula anos completos
     let anos = agora.getFullYear() - dataInicio.getFullYear();
     let meses = agora.getMonth() - dataInicio.getMonth();
     let dias = agora.getDate() - dataInicio.getDate();
+    let horas = agora.getHours() - dataInicio.getHours();
+    let minutos = agora.getMinutes() - dataInicio.getMinutes();
+    let segundos = agora.getSeconds() - dataInicio.getSeconds();
 
-    // Ajuste de meses e anos
-    if (meses < 0) {
-        anos--;
-        meses += 12;
+    // Ajuste para segundos negativos
+    if (segundos < 0) {
+        segundos += 60;
+        minutos--;
     }
 
-    // Ajuste de dias
+    // Ajuste para minutos negativos
+    if (minutos < 0) {
+        minutos += 60;
+        horas--;
+    }
+
+    // Ajuste para horas negativas
+    if (horas < 0) {
+        horas += 24;
+        dias--;
+    }
+
+    // Ajuste para dias negativos
     if (dias < 0) {
         meses--;
-        let mesAnterior = agora.getMonth() - 1;
-        let anoDoMesAnterior = agora.getFullYear();
-        if (mesAnterior < 0) {
-            mesAnterior = 11;
-            anoDoMesAnterior--;
+        // Se o mês atual é janeiro, vamos para dezembro do ano anterior
+        if (agora.getMonth() === 0) {
+            dias += calcularDiasNoMes(agora.getFullYear() - 1, 11);
+        } else {
+            dias += calcularDiasNoMes(agora.getFullYear(), agora.getMonth() - 1);
         }
-        const diasMesAnterior = calcularDiasNoMes(anoDoMesAnterior, mesAnterior);
-        dias += diasMesAnterior;
     }
 
-    // Calculando a diferença de tempo em horas, minutos e segundos
-    const tempoRestante = agora - dataInicio;
-    const horas = Math.floor((tempoRestante % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutos = Math.floor((tempoRestante % (1000 * 60 * 60)) / (1000 * 60));
-    const segundos = Math.floor((tempoRestante % (1000 * 60)) / 1000);
+    // Ajuste para meses negativos
+    if (meses < 0) {
+        meses += 12;
+        anos--;
+    }
 
     // Atualizando o conteúdo na página
+    document.getElementById('anos').innerText = anos;
     document.getElementById('meses').innerText = meses;
     document.getElementById('dias').innerText = dias;
     document.getElementById('horas').innerText = horas;
     document.getElementById('minutos').innerText = minutos;
     document.getElementById('segundos').innerText = segundos;
 
+    // Atualiza a data completa
+    document.getElementById('data-completa').innerText = 
+        `${anos} anos, ${meses} meses, ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
 }
 
 // Atualizando a contagem de tempo a cada segundo
@@ -66,12 +84,13 @@ function criarCoracao() {
     document.getElementById("coracoes").appendChild(coracao);
   
     setTimeout(() => {
-      coracao.remove();
+        coracao.remove();
     }, 5000);
-  }
-  setInterval(criarCoracao, 300);
-  document.querySelector('.dropdown').addEventListener('click', function() {
+}
+
+setInterval(criarCoracao, 300);
+
+document.querySelector('.dropdown').addEventListener('click', function() {
     const menu = this.querySelector('.dropdown-menu');
     menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
 });
-   
