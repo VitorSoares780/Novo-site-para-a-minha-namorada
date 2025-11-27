@@ -38,7 +38,7 @@ function calcularTempo() {
         dias--;
     }
 
-    // Ajuste para dias negativos
+    // Ajuste para dias negativos (CORREÇÃO DO PROBLEMA DE RESET)
     if (dias < 0) {
         meses--;
         // Se o mês atual é janeiro, vamos para dezembro do ano anterior
@@ -54,6 +54,14 @@ function calcularTempo() {
         meses += 12;
         anos--;
     }
+
+    // Garante que não temos valores negativos
+    anos = Math.max(0, anos);
+    meses = Math.max(0, meses);
+    dias = Math.max(0, dias);
+    horas = Math.max(0, horas);
+    minutos = Math.max(0, minutos);
+    segundos = Math.max(0, segundos);
 
     // Atualizando o conteúdo na página
     document.getElementById('anos').innerText = anos;
@@ -90,7 +98,12 @@ function criarCoracao() {
 
 setInterval(criarCoracao, 300);
 
-document.querySelector('.dropdown').addEventListener('click', function() {
-    const menu = this.querySelector('.dropdown-menu');
-    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdown = document.querySelector('.dropdown');
+    if (dropdown) {
+        dropdown.addEventListener('click', function() {
+            const menu = this.querySelector('.dropdown-menu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        });
+    }
 });
